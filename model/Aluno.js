@@ -4,11 +4,55 @@ const TCC = require('./TCC');
 module.exports = class Aluno {
 
     constructor() {
-        this.infoUsuario = new Usuario();
+        this.nome = "";
+        this.telefone = "";
+        this.email = "";
+        this.senha = "";
+        this.curso = "";
         this.matricula = "";
         this.anoIngresso = "";
         this.endereco = "";
         this.trabalho = new TCC();
+      }
+
+      setNome(n) {
+        this.nome = n;
+      }
+
+      getNome() {
+        return this.nome;
+      }
+
+      setTelefone(t) {
+        this.telefone = t;
+      }
+
+      getTelefone() {
+        return this.telefone;
+      }
+
+      setEmail(e) {
+        this.email = e;
+      }
+
+      getEmail() {
+        return this.email;
+      }
+      
+      setSenha(s) {
+        this.senha = s;
+      }
+
+      getSenha() {
+        return this.senha;
+      }
+
+      setCurso(c) {
+        this.senha = s;
+      }
+
+      getCurso() {
+        return this.curso;
       }
 
       setInfoUsuario(user) {
@@ -53,9 +97,9 @@ module.exports = class Aluno {
 
       inserir(connection) {
         try {
-          var sql = "INSERT INTO aluno (matricula, ano_ingresso, endereco) VALUES(?, ?, ?)";
+          var sql = "INSERT INTO aluno (nome, telefones, email, curso, matricula, ano_ingresso, endereco) VALUES(?, ?, ?,?, ?, ?, ?)";
       
-          connection.query(sql, [this.matricula, this.anoIngresso, this.endereco], function (err, result) {
+          connection.query(sql, [this.nome, this.telefone, this.email, this.curso, this.matricula, this.anoIngresso, this.endereco], function (err, result) {
             if (err) throw "teste";
             //if (err) console.error('err from callback: ' + err.stack);
             });
