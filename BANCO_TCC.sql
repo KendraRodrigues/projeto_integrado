@@ -1,3 +1,4 @@
+DROP  database`sistema_tcc`;
 CREATE DATABASE `sistema_tcc`;
 USE `sistema_tcc` ;
 
@@ -42,6 +43,7 @@ CREATE TABLE `aluno` (
     REFERENCES `telefones` (`telefones_id`)
 ) ENGINE = innoDB;
 
+
 CREATE TABLE `TCC` (
   `idTCC` INT NOT NULL,
   `titulo` VARCHAR(45) NULL,
@@ -57,7 +59,6 @@ CREATE TABLE `TCC` (
     REFERENCES `aluno` (`aluno_matricula`)
 ) ENGINE = InnoDB;
 
-
 CREATE TABLE `professor` (
   `professor_matricula` INT NOT NULL,
   `nome` VARCHAR(60) NULL,
@@ -67,24 +68,23 @@ CREATE TABLE `professor` (
   `areas_atuacao` VARCHAR(45) NULL,
   `TCC_idTCC` INT NOT NULL,
   PRIMARY KEY (`TCC_idTCC`),
-  CONSTRAINT `fk_TCC_idTCC`
-    FOREIGN KEY (`TCC_idTCC`)
-    REFERENCES `TCC` (`TCC_idTCC`)
+  FOREIGN KEY (`TCC_idTCC`)
+    REFERENCES `TCC` (`idTCC`)
 ) ENGINE = InnoDB;
+
 
 CREATE TABLE `turnos` (
   `turnos_id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(10) NULL,
-  `curso_id` VARCHAR(60) NOT NULL,
+  `curso_id` INT NOT NULL,
   PRIMARY KEY (`turnos_id`),
     FOREIGN KEY (`curso_id`)
     REFERENCES `curso` (`curso_id`)
 );
 
-CREATE USER 'gleison'@'localhost' IDENTIFIED
-WITH mysql_native_password BY '12345678';
+CREATE USER 'grupo'@'localhost' IDENTIFIED BY '12345678';
 
 GRANT ALL PRIVILEGES ON *.* TO
-'gleison'@'localhost';
+'grupo'@'localhost';
 
 FLUSH PRIVILEGES;
