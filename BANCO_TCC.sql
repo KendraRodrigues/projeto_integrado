@@ -1,4 +1,3 @@
-DROP  database`sistema_tcc`;
 CREATE DATABASE `sistema_tcc`;
 USE `sistema_tcc` ;
 
