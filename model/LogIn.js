@@ -17,7 +17,7 @@ module.exports = class LogIn {
       }
  
       getSenAluno() {
-        return this.aluno.getInfoUsuario();
+        return this.aluno;
       }
 
       autenticar() {

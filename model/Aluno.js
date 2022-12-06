@@ -5,11 +5,11 @@ module.exports = class Aluno {
 
     constructor() {
         this.nome = "";
-        this.telefone = "";
         this.email = "";
-        this.senha = "";
+        this.telefone = "";
         this.curso = "";
         this.matricula = "";
+        this.senha = "";
         this.anoIngresso = "";
         this.endereco = "";
         this.trabalho = new TCC();
@@ -23,6 +23,14 @@ module.exports = class Aluno {
         return this.nome;
       }
 
+      setEmail(e) {
+        this.email = e;
+      }
+
+      getEmail() {
+        return this.email;
+      }
+
       setTelefone(t) {
         this.telefone = t;
       }
@@ -30,13 +38,21 @@ module.exports = class Aluno {
       getTelefone() {
         return this.telefone;
       }
-
-      setEmail(e) {
-        this.email = e;
+      
+      setCurso(c) {
+        this.curso = s;
       }
-
-      getEmail() {
-        return this.email;
+      
+      getCurso() {
+        return this.curso;
+      }
+      
+      setMatricula(mat) {
+        this.matricula = mat;
+      }
+      
+      getMatricula() {
+        return this.matricula;
       }
       
       setSenha(s) {
@@ -46,31 +62,6 @@ module.exports = class Aluno {
       getSenha() {
         return this.senha;
       }
-
-      setCurso(c) {
-        this.senha = s;
-      }
-
-      getCurso() {
-        return this.curso;
-      }
-
-      setInfoUsuario(user) {
-        this.infoUsuario = user;
-      }
-
-      getInfoUsuario() {
-        return this.infoUsuario;
-      }
-
-      setMatricula(mat) {
-        this.matricula = mat;
-      }
-
-      getMatricula() {
-        return this.matricula;
-      }
-
       setAnoIngresso(ai) {
         this.anoIngresso = ai;
       }

@@ -15,8 +15,8 @@ const LogIn = require('./model/LogIn');
 
 var mysql = require('mysql');
 var con = mysql.createConnection({
-  host: "200.17.84.52",
-  user: "gleison",
+  host: "localhost",
+  user: "grupo",
   password: "12345678",
   database: "sistema_tcc"
 });
@@ -37,10 +37,10 @@ app.post('/cadastrarAluno', function(req, res) {
 
       var cad = new Aluno();
       
-      cad.getInfoUsuario().setNome(req.body.nome);
-      cad.getInfoUsuario().setTelefone(req.body.telefone);
-      cad.getInfoUsuario().setEmail(req.body.email);
-      cad.getInfoUsuario().setSenha(req.body.senha);
+      cad.setNome(req.body.nome);
+      cad.setTelefone(req.body.telefone);
+      cad.setEmail(req.body.email);
+      cad.setSenha(req.body.senha);
       cad.setMatricula(req.body.matricula);
       cad.setAnoIngresso(req.body.anoIngresso);
       cad.setEndereco(req.body.endereco);
