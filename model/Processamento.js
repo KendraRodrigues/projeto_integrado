@@ -1,10 +1,10 @@
-module.exports = class Processamento {
+module.exports = class Processamento { // Edição maneira
 
     cancelar() {
 
     };
 
-    confirmar() {
+    confirmar() { 
 
     };
 
