@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Trabalho 2º Trimestre - TCC</title>
+</head>
+<body>
+    <figure>
+        <img src="../banner.png" alt="banner" width="100%" height="100%">
+    </figure>
+
+    <section class="flex-container">
+        <aside> 
+            <div class="asideleft">
+                <nav>
+                    <ul>
+                        <li class="texto-escuro menu"><img src="../homeIcon.jpg" height="30" width="30">
+                            <a class="active" href="../index.html">Início</a></li>
+                        
+                            <li class="texto-escuro menu"><img src="../userIcon.jpg" height="30" width="30">
+                            <a href="logInAluno/formularioLogin.html" >Login</a></li>
+    
+                            <li class="texto-escuro menu"><img src="../cadastroUserIcon.jpg" height="30" width="30">
+                            <a href="cadAluno/formularioCadastroAluno.html" >Cadastro de aluno</a></li>
+    
+                            <li class="texto-escuro menu"><img src="../maisIcon.jpg"height="30" width="30">
+                            <a href="cadTrabalho/formularioCadastrarTrabalho.html" >Cadastro de Trabalho</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+    </section>
+
+    <main>
+<!-- *************************** -->
+
+    <h1>Tem certeza?</h1>
+    <hr><br>
+
+    <form action="/excluirTrabalho" method="post">
+        <fieldset>
+            <label for="tituloTrabalho">Título do Trabalho:</label><br>
+            <input type="text" name="tituloTrabalho" id="tituloTrabalho" size="100"><br><br>
+                
+            <label for="resumoTrabalho">Resumo:</label><br>
+            <textarea name="resumoTrabalho" id="resumoTrabalho" cols="100" rows="3"></textarea><br><br>
+                        
+            <label for="palavrasChave">Palavras-chave:</label><br>
+            <input type="text" name="palavrasChave" id="palavrasChave" size="70"><br><br>
+                        
+            <label for="linkTrabalho">Link:</label><br>
+            <input type="text" name="linkTrabalho" id="linkTrabalho" size="70"><br><br>
+
+            <input type="button" name="excluir" value="Excluir">
+            <input type="reset" name="cancelar" value="Cancelar">
+        </fieldset>
+    </form>
+
+<!-- *************************** -->
+    </main>
+    <footer>
+        <h5>Desenvolvido por Fernanda Pinheiro, Kendra Rodrigues, Maria Eduarda Martins, Sabrina Pacini e Steicy Schirmann | 2022</h5>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <title>Trabalho 2º Trimestre - TCC</title>
+    </head>
+    <body>
+
+    <!-- Container da página inteira -->
+        <div id="grid">
+
+    <!-- Cabeçalho, contém o banner -->
+            <header class="cabecalho-pagina constante">
+                <div class="banner-img">
+                    <figure>
+                        <img src="../banner.png" alt="banner" width="100%">
+                    </figure>
+                </div>
+            </header>
+                
+    <!-- Aside, contém menu lateral -->
+            <aside class="constante">
+                <nav>
+                    <ul>
+                        <li class="texto-escuro menu"><img src="../homeIcon.jpg" height="30" width="30">
+                        <a class="active" href="../index.html">Início</a></li>
+                    
+                        <li class="texto-escuro menu"><img src="../userIcon.jpg" height="30" width="30">
+                        <a href="logInAluno/formularioLogin.html" >Login</a></li>
+
+                        <li class="texto-escuro menu"><img src="../cadastroUserIcon.jpg" height="30" width="30">
+                        <a href="cadAluno/formularioCadastroAluno.html" >Cadastro de aluno</a></li>
+
+                        <li class="texto-escuro menu"><img src="../maisIcon.jpg"height="30" width="30">
+                        <a href="cadTrabalho/formularioCadastrarTrabalho.html" >Cadastro de Trabalho</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+    <!--Main, conteudo principal, específico a cada página--> 
+            <main>
+                <h1 class="titulo-pagina">Aluno</h1>
+                <hr>
+                <div class="main-pagina principal">
+                    <br><br>
+
+                    <form action="/entradaAluno" method="post"> 
+                        <fieldset>
+                            <label for="matricula">Matrícula</label><br>
+                            <input type="text" name="matricula" id="matricula" size="20"><br><br>
+
+                            <label for="senha">Senha:</label><br>
+                            <input type="password" name="senha" id="senha" size="20"><br><br>
+                        </fieldset>
+                        <br><br>
+
+                        <div class="botoes">
+                            <button id="cadastro" class="botao"> <a href="../cadAluno/formularioCadastroAluno.html">Cadastrar</a></button>
+
+                            <input type="submit" class="botao" name="entrar" value="Entrar">
+                        </div>
+                    </form>
+                </div>
+            </main>
+
+            <footer class="footer-pagina constante">
+                <h5>Desenvolvido por Fernanda Pinheiro, Kendra Rodrigues, Maria Eduarda Martins, Sabrina Pacini e Steicy Schirmann | 2022</h5>
+            </footer>
+        </div>
+    </body>
+</html>

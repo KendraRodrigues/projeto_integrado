@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <title>Trabalho 2º Trimestre - TCC</title>
+    </head>
+    <body>
+
+    <!-- Container da página inteira -->
+        <div id="grid">
+
+    <!-- Cabeçalho, contém o banner -->
+            <header class="cabecalho-pagina constante">
+                <div class="banner-img">
+                    <figure>
+                        <img src="../banner.png" alt="banner" width="100%">
+                    </figure>
+                </div>
+        
+            </header>
+                
+        <!-- Aside, contém menu lateral -->
+            <aside class="constante">
+                <nav >
+                    <ul>
+                        <li class="texto-escuro menu"><img src="../homeIcon.jpg" height="30" width="30">
+                        <a class="active" href="../index.html">Início</a></li>
+                    
+                        <li class="texto-escuro menu"><img src="../userIcon.jpg" height="30" width="30">
+                        <a href="logInAluno/formularioLogin.html" >Login</a></li>
+
+                        <li class="texto-escuro menu"><img src="../cadastroUserIcon.jpg" height="30" width="30">
+                        <a href="cadAluno/formularioCadastroAluno.html" >Cadastro de aluno</a></li>
+
+                        <li class="texto-escuro menu"><img src="../maisIcon.jpg"height="30" width="30">
+                        <a href="cadTrabalho/formularioCadastrarTrabalho.html" >Cadastro de Trabalho</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+    <!--Main, conteudo principal, específico a cada página-->         
+            <main>     
+                <h1>Trabalhos cadastrados</h1>
+                <hr><br>
+                <div class="main-pagina principal">
+                    <div class="barra-pesquisa">
+                        <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquisar Trabalho..."/>
+                        <button type="button" onclick="">Pesquisar</button><br><br>
+                    </div>                    
+
+                    <fieldset class="botoes processamento">
+                        <input type="button" name="inserir" class="botao" id="inserir" value="Inserir">
+                        <input type="button" name="atualizar" class="botao" id="atualizar" value="Atualizar">
+                        <input type="button" name="excluir" class="botao" id="excluir" value="Excluir">
+                    </fieldset><br>
+
+                    <fieldset class="inicioAluno">
+                        <table>
+                            <tr>
+                                <th>Título do Trabalho</th>
+                                <th>Nome do autor</th>
+                                <th>Palavras-chave</th>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="titulo1" id="titulo1">Título 1</td>
+                                <td>Nome 1</td>
+                                <td>Palavras-chave 1</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="titulo2" id="titulo2">Título 2</td>
+                                <td>Nome 2</td>
+                                <td>Palavras-chave 2</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="titulo3" id="titulo3">Título 3</td>
+                                <td>Nome 3</td>
+                                <td>Palavras-chave 3</td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                </div>
+            </main>
+        <!-- *************************** -->
+            
+            <footer class="footer-pagina constante">
+                <h5>Desenvolvido por Fernanda Pinheiro, Kendra Rodrigues, Maria Eduarda Martins, Sabrina Pacini e Steicy Schirmann | 2022</h5>
+            </footer>
+        </div>
+    </body>
+</html>
+
+
+

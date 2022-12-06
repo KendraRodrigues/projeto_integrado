@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <title>Trabalho 2º Trimestre - TCC</title>
+    </head>
+    <body>
+
+    <!-- Container da página inteira -->
+        <div id="grid">
+
+    <!-- Cabeçalho, contém o banner -->
+            <header class="cabecalho-pagina constante">
+                <div class="banner-img">
+                    <figure>
+                        <img src="../banner.png" alt="banner" width="100%">
+                    </figure>
+                </div>
+        
+            </header>
+                
+        <!-- Aside, contém menu lateral -->
+            <aside class="constante">
+                <nav >
+                    <ul>
+                        <li class="texto-escuro menu"><img src="../homeIcon.jpg" height="30" width="30">
+                        <a class="active" href="../index.html">Início</a></li>
+                    
+                        <li class="texto-escuro menu"><img src="../userIcon.jpg" height="30" width="30">
+                        <a href="logInAluno/formularioLogin.html" >Login</a></li>
+
+                        <li class="texto-escuro menu"><img src="../cadastroUserIcon.jpg" height="30" width="30">
+                        <a href="cadAluno/formularioCadastroAluno.html" >Cadastro de aluno</a></li>
+
+                        <li class="texto-escuro menu"><img src="../maisIcon.jpg"height="30" width="30">
+                        <a href="cadTrabalho/formularioCadastrarTrabalho.html" >Cadastro de Trabalho</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+    <!--Main, conteudo principal, específico a cada página-->         
+            <main>     
+                <h1 class="titulo-pagina">Cadastro de Aluno</h1>
+                <hr>
+                <div class="main-pagina principal">
+                    <br><br>
+                    <form action="/cadastrarAluno" method="post">
+                        <fieldset>
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" name="nome" id="nome" size="30"><br><br>
+                
+                            <label for="matricula">Matrícula:</label><br>
+                            <input type="text" name="matricula" id="matricula" size="20"><br><br>
+                
+                            <label for="email">Email:</label><br>
+                            <input type="text" name="email" id="email" size="30"><br><br>
+                
+                            <label for="telefone">Telefone:</label><br>
+                            <input type="text" name="telefone" id="telefone" size="20"><br><br>
+                
+                            <label for="curso">Curso:</label><br>
+                            <select name="curso" id="curso">
+                                <option hidden value="escolha">Selecione um curso</option>
+                                <option value="curso1">Curso 1</option>
+                                <option value="curso2">Curso 2</option>
+                                <option value="curso3">Curso 3</option>
+                                <option value="curso4">Curso 4</option>
+                                <option value="curso5">Curso 5</option>
+                            </select><br><br>
+                
+                            <label for="anoIngresso">Data de Ingresso:</label><br>
+                            <input type="month" value="2001-06" name="anoIngresso" id="anoIngresso" size="10"><br><br>
+                
+                            <label for="endereco">Endereço:</label><br>
+                            <textarea name="endereco" id="endereco" cols="100" rows="3"></textarea><br><br>
+                
+                            <label for="senha">Senha:</label><br>
+                            <input type="password" name="senha" id="senha" size="20"><br><br>                                           
+                        </fieldset>
+
+                        <div class="botoes">
+                            <input type="submit" class="botao"name="cadastrar" value="Cadastrar">
+                            <input type="reset" class="botao" name="cancelar" value="Cancelar">
+                        </div>
+                    </form>  
+                </div>
+            </main>
+        <!-- *************************** -->
+            
+            <footer class="footer-pagina constante">
+                <h5>Desenvolvido por Fernanda Pinheiro, Kendra Rodrigues, Maria Eduarda Martins, Sabrina Pacini e Steicy Schirmann | 2022</h5>
+            </footer>
+        </div>
+    </body>
+</html>
+
+
+
