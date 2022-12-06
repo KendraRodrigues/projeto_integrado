@@ -1,3 +1,4 @@
+drop database sistema_tcc;
 CREATE DATABASE `sistema_tcc`;
 USE `sistema_tcc` ;
 
@@ -35,7 +36,6 @@ CREATE TABLE `aluno` (
   `curso_id` INT NOT NULL,
   `telefones_id` INT NOT NULL,
   PRIMARY KEY (`aluno_id`),
-  INDEX `fk_TCC_aluno` (`aluno_matricula`),
     FOREIGN KEY (`curso_id`)
     REFERENCES `curso` (`curso_id`),
     FOREIGN KEY (`telefones_id`)
@@ -52,8 +52,6 @@ CREATE TABLE `TCC` (
   `aluno_matricula` INT NOT NULL,
   `professor_matricula` INT NOT NULL,
   PRIMARY KEY (`idTCC`),
-  INDEX `fk_TCC_idTCC` (`professor_matricula`),
-  CONSTRAINT `fk_TCC_aluno`
     FOREIGN KEY (`aluno_matricula`)
     REFERENCES `aluno` (`aluno_matricula`)
 ) ENGINE = InnoDB;

@@ -88,11 +88,11 @@ module.exports = class Aluno {
 
       inserir(connection) {
         try {
-          var sql = "INSERT INTO aluno (nome, telefones, email, curso, matricula, ano_ingresso, endereco) VALUES(?, ?, ?,?, ?, ?, ?)";
+          var sql = "INSERT INTO aluno (nome, telefones, email, curso_id, aluno_matricula, ano_ingresso, endereco) VALUES(?, ?, ?,?, ?, ?, ?)";
       
           connection.query(sql, [this.nome, this.telefone, this.email, this.curso, this.matricula, this.anoIngresso, this.endereco], function (err, result) {
-            if (err) throw "teste";
-            //if (err) console.error('err from callback: ' + err.stack);
+            //if (err) throw "teste";
+            if (err) console.error('err from callback: ' + err.stack);
             });
         } catch (e) {
           console.error('err from callback: ' + e.stack);

@@ -35,16 +35,22 @@ app.get('/', function(req, res){
 
 app.post('/cadastrarAluno', function(req, res) {
 
-      var cad = new Aluno();
-      
-      cad.setNome(req.body.nome);
-      cad.setTelefone(req.body.telefone);
-      cad.setEmail(req.body.email);
-      cad.setSenha(req.body.senha);
-      cad.setMatricula(req.body.matricula);
-      cad.setAnoIngresso(req.body.anoIngresso);
-      cad.setEndereco(req.body.endereco);
-      
+  try{
+    var cad = new Aluno();
+    
+    cad.setNome(req.body.nome);
+    cad.setTelefone(req.body.telefone);
+    cad.setEmail(req.body.email);
+    cad.setSenha(req.body.senha);
+    cad.setMatricula(req.body.matricula);
+    cad.setAnoIngresso(req.body.anoIngresso);
+    cad.setEndereco(req.body.endereco);
+    
+    var retorno = cad.inserir(con);
+    console.log('Aqui: ' + retorno);
+  } catch (e) {
+    console.log('Erro: '+e.message);
+  }
     res.sendFile(__dirname + '/views/logInAluno/formularioLogin.html');
 });
 
