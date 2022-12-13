@@ -1,4 +1,3 @@
-drop database sistema_tcc;
 CREATE DATABASE `sistema_tcc`;
 USE `sistema_tcc` ;
 
@@ -9,10 +8,10 @@ CREATE TABLE `modalidades` (
 );
 
 CREATE TABLE `curso` (
-  `curso_id` INT NOT NULL AUTO_INCREMENT,
+  `curso_id` INT NOT NULL,
   `nome` VARCHAR(60) NOT NULL,
-  `quantidades_periodos` INT NULL,
-  `tipos_periodos` INT NULL,
+  `quantidades_periodos` INT NOT NULL,
+  `tipos_periodos` INT NOT NULL,
   `modalidades_id` INT NOT NULL,
   PRIMARY KEY (`curso_id`),
     FOREIGN KEY (`modalidades_id`)
@@ -21,18 +20,18 @@ CREATE TABLE `curso` (
 
 CREATE TABLE `telefones` (
   `telefones_id` INT NOT NULL AUTO_INCREMENT,
-  `numero` INT NULL,
+  `numero` INT NOT NULL,
   PRIMARY KEY (`telefones_id`)
   );
 
 CREATE TABLE `aluno` (
   `aluno_id` INT NOT NULL AUTO_INCREMENT,
   `aluno_matricula` INT NOT NULL,
-  `nome` VARCHAR(60) NULL,
-  `ano_ingresso` DATE NULL,
-  `email` VARCHAR(45) NULL,
-  `endereco` VARCHAR(45) NULL,
-  `telefones` VARCHAR(45) NULL,
+  `nome` VARCHAR(60) NOT NULL,
+  `ano_ingresso` DATE NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `endereco` VARCHAR(45) NOT NULL,
+  `telefones` VARCHAR(45) NOT NULL,
   `curso_id` INT NOT NULL,
   `telefones_id` INT NOT NULL,
   PRIMARY KEY (`aluno_id`),
@@ -40,39 +39,39 @@ CREATE TABLE `aluno` (
     REFERENCES `curso` (`curso_id`),
     FOREIGN KEY (`telefones_id`)
     REFERENCES `telefones` (`telefones_id`)
-) ENGINE = innoDB;
+);
 
 
 CREATE TABLE `TCC` (
   `idTCC` INT NOT NULL,
-  `titulo` VARCHAR(45) NULL,
-  `resumo` VARCHAR(45) NULL,
-  `palavras_chave` VARCHAR(45) NULL,
-  `link_documento` VARCHAR(45) NULL,
-  `aluno_matricula` INT NOT NULL,
+  `titulo` VARCHAR(45) NOT NULL,
+  `resumo` VARCHAR(45) NOT NULL,
+  `palavras_chave` VARCHAR(45) NOT NULL,
+  `link_documento` VARCHAR(45) NOT NULL,
+  `aluno_id` INT NOT NULL,
   `professor_matricula` INT NOT NULL,
   PRIMARY KEY (`idTCC`),
-    FOREIGN KEY (`aluno_matricula`)
-    REFERENCES `aluno` (`aluno_matricula`)
-) ENGINE = InnoDB;
+    FOREIGN KEY (`aluno_id`)
+    REFERENCES `aluno` (`aluno_id`)
+);
 
 CREATE TABLE `professor` (
   `professor_matricula` INT NOT NULL,
-  `nome` VARCHAR(60) NULL,
-  `telefone` INT NULL,
-  `email` VARCHAR(45) NULL,
-  `titulacoes` INT NULL,
-  `areas_atuacao` VARCHAR(45) NULL,
-  `TCC_idTCC` INT NOT NULL,
-  PRIMARY KEY (`TCC_idTCC`),
-  FOREIGN KEY (`TCC_idTCC`)
+  `nome` VARCHAR(60) NOT NULL,
+  `telefone` INT NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `titulacoes` INT NOT NULL,
+  `areas_atuacao` VARCHAR(45) NOT NULL,
+  `idTCC` INT NOT NULL,
+  PRIMARY KEY (`idTCC`),
+  FOREIGN KEY (`idTCC`)
     REFERENCES `TCC` (`idTCC`)
-) ENGINE = InnoDB;
+);
 
 
 CREATE TABLE `turnos` (
   `turnos_id` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(10) NULL,
+  `nome` VARCHAR(10) NOT NULL,
   `curso_id` INT NOT NULL,
   PRIMARY KEY (`turnos_id`),
     FOREIGN KEY (`curso_id`)
